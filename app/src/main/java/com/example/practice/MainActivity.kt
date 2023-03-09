@@ -1,5 +1,6 @@
 package com.example.practice
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -19,10 +20,10 @@ class MainActivity : AppCompatActivity() {
 
         }
 
-        var count = 0
-        btnCount.setOnClickListener {
-            count++
-            tvCount.text = "Você ja chukou: $count"
+        btnNextActivity.setOnClickListener {
+            Intent(this, MainActivity2::class.java).also {
+                startActivity(it)
+            }
         }
     }
 }
